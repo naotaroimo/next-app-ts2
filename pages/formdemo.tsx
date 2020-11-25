@@ -1,4 +1,5 @@
 import { Form, Formik, Field} from 'formik';
+import {MenuItem, TextField} from '@material-ui/core';
 
 //Fomikにあてるフォーム用のデータ構造
 import {VtuberDetails} from '../interfaces/vtuberdetails';
@@ -23,11 +24,10 @@ const FormDemo = ()=>{
                {( {values} ) => (
                    <Form>
                        {/* デフォルト inputタグ相当 */}
-                       <Field name ="fullName"/>
+                       <Field name ="fullName" as={TextField} label="Full Name" />
 
                        {/* type でnumber指定 */}
-                       <Field name ="height" type="number"/>
-
+                       <Field name ="height" as={TextField} type="number" label="height"/>
 
                        {/* type でcheckbox指定 */}
                        <Field name ="language" value="japanese" type="checkbox"/>
@@ -35,18 +35,19 @@ const FormDemo = ()=>{
                        <Field name ="language" value="other" type="checkbox"/>
 
                        {/* textarea selectなどはasで指定 */}
-                       <Field name ="details" as="textarea"/>
+                       <Field name ="details" as={TextField} multiline rows={5}/>
 
                        {/* option */}
-                       <Field name ="groupid" as="select">
-                           <option value={-1}>----</option>
-                           <option value={0}>freelance</option>
-                           <option value={1}>VOMS</option>
-                           <option value={2}>holostars</option>
-                           <option value={3}>nijisanji</option>
-                           <option value={4}>hololive</option>
-                           <option value={5}>animare</option>
+                       <Field name ="groupid" as={TextField} select>
+                           <MenuItem value={-1}>----</MenuItem>
+                           <MenuItem value={0}>freelance</MenuItem>
+                           <MenuItem value={1}>VOMS</MenuItem>
+                           <MenuItem value={2}>holostars</MenuItem>
+                           <MenuItem value={3}>nijisanji</MenuItem>
+                           <MenuItem value={4}>hololive</MenuItem>
+                           <MenuItem value={5}>animare</MenuItem>
                        </Field>
+
 
                        <Field name ="inAction" type="checkbox"/>
 
