@@ -42,6 +42,12 @@ const IndexPage = () => (
      )
    }
 
+  <div>
+    <Link href="/formdemo">
+      <a>formdemo</a>
+    </Link>
+  </div>
+
   </Layout>
 )
 

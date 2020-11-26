@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
-    "mock-server": "npx json-server --watch ./db.json -p 4001 -d 1000"
+    "mock-server": "npm json-server --watch ./db.json -p 4001 -d 1000"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
